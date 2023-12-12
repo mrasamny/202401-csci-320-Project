@@ -1,4 +1,4 @@
-#include ".h"
+#include "final_proj.h"
 #include <stdlib.h>
 #include <stdio.h>
 Page* pages;
@@ -43,4 +43,7 @@ int get_page_offset(int logical_address) {
     int offset = logical_address & 0x00FF;
     return offset;
 }
+
+
+
 
