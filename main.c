@@ -1,35 +1,39 @@
-#define NUM_OF_FRAMES 256;
-#define TLB_SIZE 16;
-#define PAGE_TABLE_SIZE 256;
-#define NUM_OF_PAGES NUM_OF_FRAMES;
-#define index_to_replace 0;
+#include <stdio.h>
+#include <stdlib.h>
 
-typedef struct {
-    int isValid;
-    int frameNumber;
-} PageTableEntry;
+int* read_logical_addresses(const char* filename, int* size) {
+    FILE* file = fopen(filename, "r");
 
-typedef struct {
-    int pageNumber;
-    int frameNumber;
-} TLBEntry;
+    // Allocate memory for logical addresses
+    int* addresses = malloc(1000 * sizeof(int)); // 1000 addresses
+    int addr;
+    *size = 0;
 
+    while (fscanf(file, "%d", &addr) == 1) {
+        addresses[*size] = addr;
+        (*size)++;
+    }
 
-typedef struct{
-    int pageNumber;
-    int pageOffset;
-} Page;
+    fclose(file);
+    return addresses;
+}
 
-// TLB functions
-void add_tlb_entry();
+int main() {
+    const char* addresses_file = "addresses.txt"; 
+    int size;
+    int* logical_addresses = read_logical_addresses(addresses_file, &size);
 
-int check_tlb();
+    if (logical_addresses == NULL) {
+        return EXIT_FAILURE;
+    }
 
-// Page table function 
-void add_to_page_table();
-int check_page_table();
+    // Rest of your implementation goes here
 
+    // Remember to free the allocated memory
+    free(logical_addresses);
 
+    return EXIT_SUCCESS;
+}
 
 
 
