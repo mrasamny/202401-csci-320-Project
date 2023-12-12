@@ -81,7 +81,7 @@ When you are ready to implement the TLB, use the strategy discussed in the secti
 Your program should run as follows:
 
 <p><span style="background-color:#EAEAEA; font-family:courier,monospace; padding: 5px; border-radius: 5px;">./a.out addresses.txt</span></p>
- 
+
 
 Your program will read in the file addresses.txt, which contains 1,000 logical addresses ranging from 0 to 65535. Your program translates each logical address to a physical address and determines the contents of the signed byte stored at the correct physical address. (Recall that in the C language, the <span style="color: blue;">char</span> data type occupies a byte of storage, so we suggest using char values.)
 
@@ -119,7 +119,6 @@ Click the <span style="background-color:green;color:white;">Use as template</spa
 <p style="color:purple">Your submission must include a makefile that creates the executable by default (i.e. when make is run on the command line without any arguments).  It should also include a clean command that cleans all .o and executable files.</p>
 
 After completing your work, submit your Github repo link on Blackboard. Your repo should show no submissions after the submission deadline. Any submissions after the deadline will result in an immediate zero (0) on the assignment. If your **program does not compile, you will receive a zero (0) on the assignment**. A rubric is provided with the project on Blackboard.
-
 
 
 

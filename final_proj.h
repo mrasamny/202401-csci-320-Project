@@ -12,7 +12,6 @@ typedef struct {
 typedef struct {
     int pageNumber;
     int frameNumber;
-    int isValid;
 } TLBEntry;
 
 
