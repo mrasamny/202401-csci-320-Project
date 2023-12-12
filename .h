@@ -42,6 +42,11 @@ int get_offsef(int logical_address);
 
 Page* convert_addresses(int* addresses);
 
+// frames functions 
+
+void read_from_backing_store();
+
+
 
 
 
